@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian - Take Submission</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Take Submission by admin.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="college-name">Neotia Institute of Technology Management & Science</div>
+        <div class="admin-info">
+            <img src="../static/assets/admin photo.jpg" alt="Admin Photo">
+            <div class="welcome-message">Welcome, Admin </div>
+        </div>
+        <div class="logout-section">
+            <button onclick="location.href='#';">Reset Password</button>
+            <button onclick="location.href='/logout';">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Take Submission</h2>
+        <form action="/takesubmission_form" method="post">
+            <table>
+                <tr>
+                    <td><label for="First_name">First Name:</label></td>
+                    <td><input type="text" id="First_name" name="First_name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Last_name">Last Name:</label></td>
+                    <td><input type="text" id="Last_name" name="Last_name" required></td>
+                </tr>
+                <tr>
+                <tr>
+                    <td><label for="College_ID">College ID:</label></td>
+                    <td><input type="number" id="College_ID" name="College_ID" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Issue_date">Issue Date:</label></td>
+                    <td><input type="date" id="Issue_date" name="Issue_date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Return_date">Return Date:</label></td>
+                    <td><input type="date" id="Return_date" name="Return_date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="submission_date">Submission Date:</label></td>
+                    <td><input type="date" id="submission_date" name="submission_date" required></td>
+                </tr>
+                
+               <!--<input type="date" id="Return_date"><br>
+                <input type="date" id="Due_date"><br><br>-->
+               <tr>
+                <td><button onclick="calculateFine()">Calculate Fine</button></td>
+                <td><div id="fineResult"></div></td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="book_ID">Book ID:</label></td>
+                    <td><input type="number" id="book_ID" name="book_ID" required></td>
+                </tr>
+                <tr>
+                    <td><label for="book_name">Book Name:</label></td>
+                    <td><input type="text" id="book_name" name="book_name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="ISBN">ISBN:</label></td>
+                    <td><input type="number" id="ISBN" name="ISBN" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Submission">Submission:</label>
+                    <td>
+                        <select id="Submission" name="Submission">
+                            <option value="Select">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="{{ url_for('static',filename='js/TakeSubmission.js')}}"></script>
+</body>
+
+</html>

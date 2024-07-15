@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/student.css')}}">
+    <title>Library student Home</title>	
+		
+</head>
+<body>
+    <div class="student-home-container">
+        <div class="top-section">
+            <div>
+                <left>
+                    <img src="../static/assets/nitmas logo 2.jpg" height="50" width="50">
+                </left>
+            </div>
+
+            <div class="college-info">
+               <h2>Neotia Institute of Technology Management & Science</h2>
+            </div>
+            <div class="user-info">
+                <img src="../static/assets/nitmas logo 2.jpg" alt="Admin Photo">
+                <p>Welcome {{username}} </p>
+                <button onclick="location.href='#';">Reset Password</button>
+                <button onclick="location.href='/logout';">Logout</button>
+            </div>
+        </div>
+
+        
+        <div class="main-section">
+            
+            <h1>Student Access Portal</h1>
+            <img src="../static/assets/Library photo 2.jpeg" height="380" width="1000">
+            <br></br>
+            
+            <div class="activity-buttons">
+            <button onclick="location.href='#';">Student Details</button>
+            <button onclick="location.href='#';">Browse Books</button>
+            <button onclick="location.href='/isuebystudent';">Issued Books</button>
+            <button onclick="location.href='#';">Fine Reciept</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Library Management System. All rights reserved.</p>
+      </footer>
+</body>
+</html>

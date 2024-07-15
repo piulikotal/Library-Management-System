@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Receipt</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/admin_fine_3.css')}}">
+</head>
+
+<body> 
+    <div class="receipt">
+        <h1>Fine Receipt</h1>
+
+
+        <div class="student-info">
+            <h2>Student Information</h2>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>ID:</strong> 123456</p>
+            <p><strong>Roll:</strong> ABC123</p>
+            <p><strong>Dept:</strong> Computer Science</p>
+            <p><strong>Session:</strong> 2022-2023</p>
+            <p><strong>Date:</strong> March 29, 2024</p>
+        </div>
+
+        <h1>Fine Detail</h1>
+        <table id="fine-table">
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>ISBN</th>
+                    <th>Sl No</th>
+                    <th>Due Date</th>
+                    <th>Payable Amount ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Introduction to programming</td>
+                    <td>9780262033848</td>
+                    <td>1</td>
+                    <td>2024-03-25</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td>Introduction to Algorithms</td>
+                    <td>9780262033848</td>
+                    <td>1</td>
+                    <td>2024-03-25</td>
+                    <td>15.00</td>
+                </tr>
+                <tr>
+                    <td>Introduction to Python</td>
+                    <td>9780262033848</td>
+                    <td>1</td>
+                    <td>2024-03-25</td>
+                    <td>10.00</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="total">
+            <strong>Total Due:</strong> <span id="total-due">$10.00</span>
+        </div>
+       
+        <div class="status">
+            <label for="status"><b>Status:</b></label>
+            <select id="status">
+                <option value="Paid">Paid</option>
+                <option value="Unpaid">Unpaid</option>
+            </select>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+   
+    <script src="admin_fine_3.js"></script>
+      
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Detail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_fine_2.css')}}">
+</head>
+
+<body>
+    <div class="top-section">
+        <div>
+            <left>
+                <img src="../static/assets/nitmas logo 2.jpg" height="50" width="50">
+            </left>
+        </div>
+
+        <div class="college-info">
+            <h2>Neotia Institute of Technology Management & Science</h2>
+        </div>
+        <div class="user-info">
+            <img src="../static/assets/nitmas logo 2.jpg" height="50" width="50" alt="Admin Photo">
+            <p>Welcome admin</p><br>
+            <hr>
+            <button onclick="location.href='/admin';">Home</button>
+            <hr>
+            <button onclick="location.href='/logout';">Logout</button>
+        </div>
+    </div>
+
+
+    <div class="table-view">
+        <h2>Fine Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    
+                    <!-- Add more columns as needed -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <!-- Your footer content -->
+    </footer>
+</body>
+
+</html>

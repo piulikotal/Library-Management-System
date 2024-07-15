@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian - Book Issue</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Issue Book by admin.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="college-name">Neotia Institute of Technology Management & Science</div>
+        <div class="admin-info">
+            <img src="../static/assets/Library logo 1.jpg" alt="Admin Photo">
+            <div class="welcome-message">Welcome, Admin!</div>
+        </div>
+        <div class="logout-section">
+            <button onclick="location.href='#';">Reset Password</button>
+            <button onclick="location.href='/logout';">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Issue Book</h2>
+        <form action="/issuebook_form" method="post">
+            <table>
+                <tr>
+                    <td><label for="Title">Title:</label></td>
+                    <td><input type="text" id="Title" name="Title" required></td>
+                </tr>
+                <tr>
+                    <td><label for="BookID">Book ID:</label></td>
+                    <td><input type="number" id="BookID" name="BookID" required></td>
+                </tr>
+                <tr>
+                    <td><label for="userID">User ID:</label></td>
+                    <td><input type="number" id="userID" name="userID" required></td>
+                </tr>
+                <tr>
+                    <td><label for="ISBN">ISBN:</label></td>
+                    <td><input type="number" id="ISBN" name="ISBN" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Author1">Author 1:</label></td>
+                    <td><input type="text" id="Author1" name="Author1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Author2">Author 2:</label></td>
+                    <td><input type="text" id="Author2" name="Author2" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Author3">Author 3:</label></td>
+                    <td><input type="text" id="Author3" name="Author3" required></td>
+                </tr>
+                <tr>
+                    <td><label for="First_name">First Name:</label></td>
+                    <td><input type="text" id="First_name" name="First_name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Last_name">Last Name:</label></td>
+                    <td><input type="text" id="Last_name" name="Last_name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Edition">Edition:</label></td>
+                    <td><input type="text" id="Edition" name="Edition" required></td>
+                </tr>
+                <tr>
+                    <td><label for="deptcode">Dept Code:</label></td>
+                    <td><input type="number" id="deptcode" name="deptcode" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Type">Type:</label></td>
+                    <td><input type="text" id="type" name="type" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Issue_date">Issue Date:</label></td>
+                    <td><input type="date" id="Issue_date" name="Issue_date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Return_date">Return Date:</label></td>
+                    <td><input type="date" id="Return_date" name="Return_date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" id="username" name="username" required></td>
+                </tr>
+                <tr>
+                    <td><label for="subject">Subject:</label></td>
+                    <td><input type="text" id="subject" name="subject" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Issue Book"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

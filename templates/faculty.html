@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/faculty.css')}}"> <!-- changed to faculty.css -->
+    <title>Faculty Portal</title>
+</head>
+<body> 
+
+    <div class="faculty-home-container"> <!-- changed class name -->
+        <div class="top-section">
+            <div>
+                <left>
+                    <img src="../static/assets/nitmas logo 2.jpg" height="50" width="50">
+                </left>
+            </div>
+
+            <div class="college-info">
+                <h2>Neotia Institute of Technology Management & Science</h2>
+            </div>
+            <div class="user-info">
+                <img src="../static/assets/nitmas logo 2.jpg" alt="Faculty Photo"> <!-- changed alt text -->
+                <p>Welcome {{username}}</p><br> <!-- changed to Faculty -->
+                <button onclick="location.href='#';">Reset Password</button>
+                <button onclick="location.href='/logout';">Logout</button>
+            </div>
+        </div>
+        
+        <div class="main-section">
+            <h1>Faculty Access Portal</h1> <!-- changed title -->
+            <style>
+                img {
+                       border: 5px solid #555;
+                        
+    }
+            </style>
+                <img src="../static/assets/faculty_image2.jpg"  height="400" width="1100"> <!-- changed image -->
+            
+           
+            <br> 
+            <div class="activity-buttons"> 
+            <button onclick="location.href='#';">Browse Books</button>
+            <button onclick="location.href='/isuebyfaculty';">Issued Books</button>
+          
+            <button onclick="location.href='#';">Faculty Advantage</button>
+           
+            <button onclick="location.href='#';">Feedback</button> 
+            </div>
+        </div>
+    </div>
+    <footer>
+       
+        <p>&copy; 2024 Neotia Institute of Technology Management & Science. All rights reserved.</p> <!-- changed footer text -->
+      </footer>
+</body>
+
+</html>

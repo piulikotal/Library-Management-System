@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Receipt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_fine_1.css')}}">
+</head>
+<body>
+    <div class="top-section">
+        <div>
+            <left>
+                <img src="../static/assets/nitmas logo 2.jpg" height="50" width="50">
+            </left>
+        </div>
+
+        <div class="college-info">
+            <h2>Neotia Institute of Technology Management & Science</h2>
+        </div>
+        <div class="user-info">
+            <img src="../static/assets/nitmas logo 2.jpg" alt="Admin Photo">
+            <p>Welcome admin</p><br><hr>
+            <button onclick="location.href='/admin';">Home</button><hr>
+            <button onclick="location.href='/logout';">Logout</button>
+        </div>
+    </div>
+
+    </div>
+
+    <h2>Fine Details</h2>
+    <form action="/submit" method="post">
+        <label for="department">Select Department:</label>
+        <select name="department" id="department">
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="year">Select Year:</label>
+        <select name="year" id="year">
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <!-- Add more options as needed -->
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <footer>
+        <h4>
+            <marquee   width = "70%">Choose yor dept and year to access the data</marquee  >
+        </h4>
+    </footer>
+</body>
+</html>

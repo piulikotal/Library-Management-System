@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Issued Books Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/issue_by_student.css')}}">
+</head>
+<body>
+	<header>
+		<h1>Issued Books By Students</h1>
+		
+	</header>
+	<div class="nav-bar1">
+		<nav>
+			<ul>
+					<div class="navbar">
+						<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+							<ul>
+						  <a class="active" href="/student"><i class="fa fa-fw fa-home"></i>Home</a>
+						</ul>
+					  </div>
+				</ul>
+			</nav>
+		</div>
+	<main> 
+		
+		<table>
+			<tr>
+				<th>Book ID</th>
+                <th>ISBN</th>
+               <th>User ID</th>
+			   <th> First Name</th>
+			   <th> Last Name</th>
+               <th>Dept Code</th>
+               <th>Edition</th>
+				<th>Issue Date</th>
+                <th>Return Date</th>
+                <th>Author 1</th>
+                <th>Author 2</th>
+                <th>Author 3</th>
+				<th>Title</th>
+               <th>Subject</th>
+                <th> Type</th>
+				
+            
+			</tr>
+			{% for row in result%}
+			<tr>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+				<td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td> {{ row[9] }}</td>
+                <td> {{ row[10] }}</td>
+                <td> {{ row[11] }}</td>
+                <td> {{ row[12] }}</td>
+				<td>{{ row[13] }}</td>
+				<td>{{ row[14] }}</td>
+				
+			</tr>
+			{% endfor %}
+
+			
+		</table> 
+		
+	</main>
+
+	<footer>
+		<p>© 2024 Online Library Management System. All Rights Reserved.</p>
+	</footer>
+
+</body>
+</html>

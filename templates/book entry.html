@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Books</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/book entry.css')}}">
+</head>
+
+<body>
+    <div class="header">
+       
+        <div class="college-name">Neotia Institute of Technology Management & Science</div>
+        <div class="admin-info">
+            <img src="../static/assets/Library logo 1.jpg" alt="Admin Photo">
+            <div class="welcome-message">Welcome Admin!</div>
+        </div>
+        <div class="logout-section">
+            <button onclick="location.href='#';">Reset Password</button>
+            <button onclick="location.href='/logout';">Logout</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Books Entry</h2>
+        <form action="/bookentry_form" method="post">
+            <!-- Your form content here -->
+            <div class="form-row">
+                <label for="Title">Title:</label>
+                <input type="text" id="Title" name="Title" required>
+            </div>
+            <div class="form-row">
+                <label for="book_id">Book ID:</label>
+                <input type="number" id="book_id" name="book_id" required>
+            </div>
+            <div class="form-row">
+                <label for="author_name1">Author Name1:</label>
+                <input type="text" id="author_name1" name="author_name1" required>
+            </div>
+            <div class="form-row">
+                <label for="author_name2">Author Name2:</label>
+                <input type="text" id="author_name2" name="author_name2" required>
+            </div>
+            <div class="form-row">
+                <label for="author_name2">Author Name3:</label>
+                <input type="text" id="author_name3" name="author_name3" required>
+            </div>
+            <div class="form-row">
+                <label for="ISBN">ISBN:</label>
+                <input type="number" id="ISBN" name="ISBN" required>
+            </div>
+            <div class="form-row">
+                <label for="book_type">Type:</label>
+                <input type="text" id="book_type" name="book_type" required>
+            </div>
+            <div class="form-row">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-row">
+                <label for="Category">Category:</label>
+                <input type="text" id="Category" name="Category" required>
+            </div>
+            <div class="form-row">
+                <label for="No_of_pages">No of pages:</label>
+                <input type="number" id="No_of_pages" name="No_of_pages" required>
+            </div>
+            <div class="form-row">
+                <label for="Edition">Edition:</label>
+                <input type="text" id="Edition" name="Edition" required>
+            </div>
+            <div class="form-row">
+                <label for="Price">Price:</label>
+                <input type="number" id="Price" name="Price" required>
+            </div>
+            
+            <div class="form-row">
+                <input type="submit" value="Add Book">
+            </div>
+        </form>
+
+        <!-- Display Records Section -->
+        <div class="records-section">
+            <h2>Records</h2>
+            <table id="records-table">
+                <!-- Records will be dynamically added here -->
+            </table>
+        </div>
+    </div>
+
+    <script src="book entry by admin.js"></script>
+</body>
+
+</html>

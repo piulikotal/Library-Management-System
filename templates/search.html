@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Searched Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/search.css')}}">
+</head>
+
+<body>
+    <header>
+        <h1>Books Records</h1>
+
+    </header>
+    <div class="nav-bar1">
+        <nav>
+            <ul>
+                <div class="navbar">
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <ul>
+                        <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        {% if result %}
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author 1</th>
+                <th>Author 2</th>
+                <th>Author 3</th>
+                <th>Type</th>
+                <th>Subject</th>
+                <th>Accession Number</th>
+                <th>Call Number</th>
+            </tr>
+            {% for book in result %}
+            <tr>
+                <td>{{ book[1] }}</td> <!-- Assuming Title is at index 1 in the database -->
+                <td>{{ book[2] }}</td>
+                <td>{{ book[3] }}</td>
+                <td>{{ book[4] }}</td>
+                <td>{{ book[6] }}</td>
+                <td>{{ book[7] }}</td> <!-- Assuming Subject is at index 13 in the database -->
+                <td>{{ book[12] }}</td> <!-- Assuming Accn_No is at index 14 in the database -->
+                <td>{{ book[13] }}</td> <!-- Assuming call_No is at index 15 in the database -->
+
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No books found.</p>
+        {% endif %}
+     
+    </main>
+
+    <footer>
+        <p>© 2024 Online Library Management System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
