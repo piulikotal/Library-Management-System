@@ -2,8 +2,7 @@ from flask import Flask, render_template,request, redirect,session, url_for
 import mysql.connector
 import bcrypt
 
-app = Flask(__name__ , static_url_path= "/static")
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
 
 db = mysql.connector.connect(
         host="localhost",
@@ -18,11 +17,6 @@ cursor = db.cursor();
 def index():
     return render_template('index.html')
 
-
-#@app.route('/signup')
-#def signup():
-
- #   return render_template('signup.html')
 
 
 @app.route('/help')
@@ -63,9 +57,6 @@ def bookentry():
 def issuebook():
     return render_template('Issue Book by admin.html')
 
-@app.route('/takesubmission')
-def takesubmission():
-    return render_template('Take Submission by admin.html')
 
 @app.route('/more')
 def more():
@@ -229,33 +220,6 @@ def issuebook_form():
         return "Internal Server Error !"
     
 
-@app.route('/takesubmission_form',methods =['POST'])
-def takesubmission_form():
-
-    First_name = request.form['First_name']
-    Last_name = request.form['Last_name']
-    College_ID = request.form['College_ID']
-    Issue_date = request.form['Issue_date']
-    Return_date = request.form['Return_date']
-    submission_date = request.form['submission_date']
-    book_ID = request.form['book_ID']
-    Submission = request.form['Submission']
-    book_name = request.form['book_name']
-    ISBN = request.form['ISBN']
-
-    sql="INSERT into take_submission (First_name,Last_name,College_ID,Issue_date,Return_date,submission_date,book_ID,Submission,book_name,ISBN) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-    val=(First_name,Last_name,College_ID,Issue_date,Return_date,submission_date,book_ID,Submission,book_name,ISBN)
-    cursor.execute (sql,val)
-    db.commit()
-
-    if cursor.rowcount>0:
-        cursor.execute("DELETE FROM issue_book WHERE BookID = %s",(book_ID,))
-        db.commit()
-
-        return "Book Submitted Successfully"
-    else:
-        return "Internal Server Error !"
-    
 
 @app.route('/adminfine2', methods=['GET'])
 def adminfine2():
@@ -290,18 +254,7 @@ def connect_to_database():
         database="project"
     )
 
-# Function to execute a SELECT query
-def execute_query(query):
-    try:
-        db = connect_to_database()
-        cursor = db.cursor()
-        cursor.execute(query)
-        result = cursor.fetchall()
-        cursor.close()
-        db.close()
-        return result
-    except mysql.connector.Error as error:
-        print("Error:", error)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
